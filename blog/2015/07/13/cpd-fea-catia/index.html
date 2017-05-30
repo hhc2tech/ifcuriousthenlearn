@@ -8,162 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-
-
-<style type="text/css">
-
-/*some stuff for output/input prompts*/
-div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.cell.selected{border-radius:4px;border:thin #ababab solid}
-div.cell.edit_mode{border-radius:4px;border:thin #008000 solid}
-div.cell{width:100%;padding:5px 5px 5px 0;margin:0;outline:none}
-div.prompt{min-width:11ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}
-@media (max-width:480px){div.prompt{text-align:left}}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
-div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;line-height:1.21429em}
-div.prompt:empty{padding-top:0;padding-bottom:0}
-div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
-div.inner_cell{width:90%;}
-div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;}
-div.input_prompt{color:navy;border-top:1px solid transparent;}
-div.output_wrapper{margin-top:5px;position:relative;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
-div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:4px;-webkit-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);-moz-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);}
-div.output_collapsed{margin:0px;padding:0px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
-div.out_prompt_overlay{height:100%;padding:0px 0.4em;position:absolute;border-radius:4px;}
-div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000000;-moz-box-shadow:inset 0 0 1px #000000;box-shadow:inset 0 0 1px #000000;background:rgba(240, 240, 240, 0.5);}
-div.output_prompt{color:darkred;}
-
-a.anchor-link:link{text-decoration:none;padding:0px 20px;visibility:hidden;}
-h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible;}
-/* end stuff for output/input prompts*/
-
-
-.highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
-</style>
-
-<style type="text/css">
-/* Overrides of notebook CSS for static HTML export */
-div.entry-content {
-  overflow: visible;
-  padding: 8px;
-}
-.input_area {
-  padding: 0.2em;
-}
-
-a.heading-anchor {
- white-space: normal;
-}
-
-.rendered_html
-code {
- font-size: .8em;
-}
-
-pre.ipynb {
-  color: black;
-  background: #f7f7f7;
-  border: none;
-  box-shadow: none;
-  margin-bottom: 0;
-  padding: 0;
-  margin: 0px;
-  font-size: 13px;
-}
-
-/* remove the prompt div from text cells */
-div.text_cell .prompt {
-    display: none;
-}
-
-/* remove horizontal padding from text cells, */
-/* so it aligns with outer body text */
-div.text_cell_render {
-    padding: 0.5em 0em;
-}
-
-img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
-</style>
-
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-<script type="text/javascript">
-init_mathjax = function() {
-    if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-            },
-            displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-    }
-}
-init_mathjax();
-</script>
     <link href="http://ifcuriousthenlearn.com/images/earth.png" rel="icon">
 
 <link rel="canonical" href="http://ifcuriousthenlearn.com/blog/2015/07/13/cpd-fea-catia/">
@@ -185,15 +29,19 @@ init_mathjax();
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://ifcuriousthenlearn.com/theme/css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="http://ifcuriousthenlearn.com/theme/css/bootstrap.journal.min.css" type="text/css"/>
     <link href="http://ifcuriousthenlearn.com/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="http://ifcuriousthenlearn.com/theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="http://ifcuriousthenlearn.com/theme/css/style.css" type="text/css"/>
 
+        <link href="http://ifcuriousthenlearn.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="if curious: then learn ATOM Feed"/>
 
 
 
+        <link href="http://ifcuriousthenlearn.com/feeds/engineering.atom.xml" type="application/atom+xml" rel="alternate"
+              title="if curious: then learn Engineering ATOM Feed"/>
 
 </head>
 <body>
@@ -229,7 +77,6 @@ if curious: then learn            </a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="http://ifcuriousthenlearn.com/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -277,7 +124,868 @@ if curious: then learn            </a>
 *
 * IPython notebook
 *
-*/.ansibold{font-weight:700}.ansiblack{}.ansired{color:#8b0000}.ansigreen{6400}.ansiyellow{color:#c4a000}.ansiblue{8b}.ansipurple{color:#9400d3}.ansicyan{color:#4682b4}.ansigray{color:gray}.ansibgblack{background-}.ansibgred{background-color:red}.ansibggreen{background-color:green}.ansibgyellow{background-color:#ff0}.ansibgblue{background-f}.ansibgpurple{background-color:#ff00ff}.ansibgcyan{background-ff}.ansibggray{background-color:gray}div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;border-radius:2px;box-sizing:border-box;-moz-box-sizing:border-box;border-width:thin;border-style:solid;width:100%;padding:5px;margin:0;outline:0}div.cell.selected{border-color:#ababab}@media print{div.cell.selected{border-color:transparent}}.edit_mode div.cell.selected{border-color:green}.prompt{min-width:14ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}@-moz-document url-prefix(){div.inner_cell{overflow-x:hidden}}div.input_area{border:1px solid #cfcfcf;border-radius:2px;background:#f7f7f7;line-height:1.21429em}div.prompt:empty{padding-top:0;padding-bottom:0}div.unrecognized_cell{padding:5px 5px 5px 0;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.unrecognized_cell .inner_cell{border-radius:2px;padding:5px;font-weight:700;color:red;border:1px solid #cfcfcf;background:#eaeaea}div.unrecognized_cell .inner_cell a,div.unrecognized_cell .inner_cell a:hover{color:inherit;text-decoration:none}@media (max-width:540px){.prompt{text-align:left}div.unrecognized_cell>div.prompt{display:none}}div.code_cell{}div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.input{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.input_prompt{color:navy;border-top:1px solid transparent}div.input_area>div.highlight{margin:.4em;border:none;padding:0;background-color:transparent}div.input_area>div.highlight>pre{margin:0;border:none;padding:0;background-color:transparent}.CodeMirror{line-height:1.21429em;font-size:14px;height:auto;background:0 0}.CodeMirror-scroll{overflow-y:hidden;overflow-x:auto}.CodeMirror-lines{padding:.4em}.CodeMirror-linenumber{padding:0 8px 0 4px}.CodeMirror-gutters{border-bottom-left-radius:2px;border-top-left-radius:2px}.CodeMirror pre{padding:0;border:0;border-radius:0}.highlight-base,.highlight-variable{}.highlight-variable-2{color:#1a1a1a}.highlight-variable-3{color:#333}.highlight-string{color:#BA2121}.highlight-comment{color:#408080;font-style:italic}.highlight-number{80}.highlight-atom{color:#88F}.highlight-keyword{color:green;font-weight:700}.highlight-builtin{color:green}.highlight-error{color:red}.highlight-operator{color:#A2F;font-weight:700}.highlight-meta{color:#A2F}.highlight-def{f}.highlight-string-2{color:#f50}.highlight-qualifier{color:#555}.highlight-bracket{color:#997}.highlight-tag{color:#170}.highlight-attribute{c}.highlight-header{f}.highlight-quote{90}.highlight-link{c}.cm-s-ipython span.cm-keyword{color:green;font-weight:700}.cm-s-ipython span.cm-atom{color:#88F}.cm-s-ipython span.cm-number{80}.cm-s-ipython span.cm-def{f}.cm-s-ipython span.cm-variable{}.cm-s-ipython span.cm-operator{color:#A2F;font-weight:700}.cm-s-ipython span.cm-variable-2{color:#1a1a1a}.cm-s-ipython span.cm-variable-3{color:#333}.cm-s-ipython span.cm-comment{color:#408080;font-style:italic}.cm-s-ipython span.cm-string{color:#BA2121}.cm-s-ipython span.cm-string-2{color:#f50}.cm-s-ipython span.cm-meta{color:#A2F}.cm-s-ipython span.cm-qualifier{color:#555}.cm-s-ipython span.cm-builtin{color:green}.cm-s-ipython span.cm-bracket{color:#997}.cm-s-ipython span.cm-tag{color:#170}.cm-s-ipython span.cm-attribute{c}.cm-s-ipython span.cm-header{f}.cm-s-ipython span.cm-quote{90}.cm-s-ipython span.cm-link{c}.cm-s-ipython span.cm-error{color:red}.cm-s-ipython span.cm-tab{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=')right no-repeat}div.output_wrapper{display:-webkit-box;-webkit-box-align:stretch;display:-moz-box;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;z-index:1}div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:2px;-webkit-box-shadow:inset 0 2px 8px rgba(0,0,0,.8);box-shadow:inset 0 2px 8px rgba(0,0,0,.8);display:block}div.output_collapsed{margin:0;padding:0;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.out_prompt_overlay{height:100%;padding:0 .4em;position:absolute;border-radius:2px}div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000;box-shadow:inset 0 0 1px #000;background:rgba(240,240,240,.5)}div.output_prompt{color:#8b0000}div.output_area{padding:0;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.output_area .MathJax_Display{text-align:left!important}div.output_area div.output_area img,div.output_area svg{max-width:100%;height:auto}div.output_area img.unconfined,div.output_area svg.unconfined{max-width:none}.output{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}@media (max-width:540px){div.output_area{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.output_area pre{margin:0;padding:0;border:0;vertical-align:baseline;background-color:transparent;border-radius:0}div.output_subarea{overflow-x:auto;padding:.4em;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1;max-width:calc(100% - 14ex)}div.output_text{text-align:left;line-height:1.21429em}div.output_stderr{background:#fdd}div.output_latex{text-align:left}div.output_javascript:empty{padding:0}.js-error{color:#8b0000}div.raw_input_container{font-family:monospace;padding-top:5px}span.raw_input_prompt{}input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;vertical-align:baseline;padding:0 .25em;margin:0 .25em}input.raw_input:focus{box-shadow:none}p.p-space{margin-bottom:10px}div.output_unrecognized{padding:5px;font-weight:700;color:red}div.output_unrecognized a,div.output_unrecognized a:hover{color:inherit;text-decoration:none}.rendered_html{}.rendered_html :link,.rendered_html :visited,.rendered_html h1:first-child{margin-top:.538em}.rendered_html h2:first-child{margin-top:.636em}.rendered_html h3:first-child{margin-top:.777em}.rendered_html h4:first-child,.rendered_html h5:first-child,.rendered_html h6:first-child{margin-top:1em}.rendered_html *+ol,.rendered_html *+ul{margin-top:1em}.rendered_html *+table{margin-top:1em}.rendered_html *+p{margin-top:1em}.rendered_html *+img{margin-top:1em}div.text_cell{display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.text_cell>div.prompt{display:none}}div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}a.anchor-link:link{text-decoration:none;padding:0 20px;visibility:hidden}h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible}.text_cell.rendered .input_area{display:none}.text_cell.rendered .text_cell.unrendered .text_cell_render{display:none}.cm-header-1,.cm-header-2,.cm-header-3,.cm-header-4,.cm-header-5,.cm-header-6{font-weight:700;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.cm-header-1{font-size:185.7%}.cm-header-2{font-size:157.1%}.cm-header-3{font-size:128.6%}.cm-header-4{font-size:110%}.cm-header-5,.cm-header-6{font-size:100%;font-style:italic}</style>
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
 <style type="text/css">.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
@@ -327,8 +1035,10 @@ if curious: then learn            </a>
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -339,85 +1049,101 @@ if curious: then learn            </a>
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><html><body><div class="cell border-box-sizing text_cell rendered">
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<style type="text/css">
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Composites-Design-and-FEA-Analysis-with-CATIA-and-SIMULIA">Composites Design and FEA Analysis with CATIA and SIMULIA<a class="anchor-link" href="#Composites-Design-and-FEA-Analysis-with-CATIA-and-SIMULIA">¶</a></h1><p><strong>Summary.</strong> This example utilizes the CATIA Composites Design workbench and the Elfini workbench to create a composite part with material properties, ply stacking, and ply orientation and perform a ply level stress analysis to determine at which pressure and location failure is expected.</p>
-<h2 id="Defining-the-Composite-Panel">Defining the Composite Panel<a class="anchor-link" href="#Defining-the-Composite-Panel">¶</a></h2><div id="sec:def"></div>
-
-The panel ([figure](#fig:panel)) is a composite laminate composed of two seperate materials. The panel is clamped on all four edges, eliminating the rotational and translational degrees of freedom, and a pressure is applied normal to the undeformed surface. It is expected that the elongated hole will likely be a stress concentration of the panel, but it is not clear what pressure the laminate is capable of supporting. However, this information will be ascertained by performing the analysis using the Elfini Finite Element workbench in CATIA. From these results, the location and plies that are at highest risk of failure will be identified using the tsai-hill composite failure criterion, and with that information, design changes can be implemented to reduce the stress and risk of failure. 
-
-<div id="fig:panel"></div><p></p><p>Panel Used in this Example</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/panel.png" width="650" />
+<h2 id="Defining-the-Composite-Panel">Defining the Composite Panel<a class="anchor-link" href="#Defining-the-Composite-Panel">¶</a></h2><div id="sec:def"></div><p>The panel (<a href="#fig:panel">figure</a>) is a composite laminate composed of two seperate materials. The panel is clamped on all four edges, eliminating the rotational and translational degrees of freedom, and a pressure is applied normal to the undeformed surface. It is expected that the elongated hole will likely be a stress concentration of the panel, but it is not clear what pressure the laminate is capable of supporting. However, this information will be ascertained by performing the analysis using the Elfini Finite Element workbench in CATIA. From these results, the location and plies that are at highest risk of failure will be identified using the tsai-hill composite failure criterion, and with that information, design changes can be implemented to reduce the stress and risk of failure.</p>
+<div id="fig:panel"></div><p><p>Panel Used in this Example</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/panel.png" width="650" /></p>
 <p>In CATIA, the Composites Design Workbench allows us to create surfaces and assign the parameters defining the composite (<a href="#fig:params">figure</a>), as well as easily validating the producibility of the part based on the curvature of the part. All the material properties, and composite parameters, such as ply thickness, orientation, material type, weight, etc are stored in the <em>CATPart</em> file created in the CPD workbench (<a href="#fig:params">figure</a>).</p>
-<div id="fig:params"></div>
-<p>Composite Parameters</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/composite-parameters.png" width="650" />
-
-
-
-The choice of material can be changed in the *CATMaterial* file if multiple materials are used, such as carbon fiber, fiberglass, epoxy, etc. 
-
-One of the challenges when designing with composites is that, due to the typical complexity of a composite part, the part design and simulation results can be difficult to visualize, and choosing the correct design parameters required to properly define the part is often unclear. A ply table is a simple way to understand how the composite is constructed. The table shown in ([figure](#fig:plytable)) shows how the composite is organized with ply number, material, and orientation. The ply table can be used interactively with the 3D model to look at the ply properties. The plys of interest for this example are highlighted in orange. These plys are on the top and bottom and cover the entire composite and make up the elongated hole, which is the expected maximum stress of the laminate. There are a total of 5 plies that make up the elongated hole, 3 on top (Ply.37,35,36)  and 2 on the bottom (Ply.33,34)
-<div id="fig:plytable"></div><p></p><p>Ply Table</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/ply-table-model.png" width="650" />
+<div id="fig:params"></div><p><p>Composite Parameters</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/composite-parameters.png" width="650" /></p>
+<p>The choice of material can be changed in the <em>CATMaterial</em> file if multiple materials are used, such as carbon fiber, fiberglass, epoxy, etc.</p>
+<p>One of the challenges when designing with composites is that, due to the typical complexity of a composite part, the part design and simulation results can be difficult to visualize, and choosing the correct design parameters required to properly define the part is often unclear. A ply table is a simple way to understand how the composite is constructed. The table shown in (<a href="#fig:plytable">figure</a>) shows how the composite is organized with ply number, material, and orientation. The ply table can be used interactively with the 3D model to look at the ply properties. The plys of interest for this example are highlighted in orange. These plys are on the top and bottom and cover the entire composite and make up the elongated hole, which is the expected maximum stress of the laminate. There are a total of 5 plies that make up the elongated hole, 3 on top (Ply.37,35,36)  and 2 on the bottom (Ply.33,34)</p>
+<div id="fig:plytable"></div><p><p>Ply Table</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/ply-table-model.png" width="650" /></p>
 <p>If we want to see the actual shape and stacking of a ply, we can navigate to the CATIA tree in <em>Stacking Engineering</em> (<a href="#fig:ply12">figure</a>), and we see Ply.37 is glass and Ply.35 is S1454-G803</p>
-<div id="fig:ply12"></div>
-<p>Ply 1 and 2</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/ply1-2.png" width="650" />
-
-
-
-Another useful visualization is the ply exploder. The ply exploder generates a 3D visual of the individual ply stacks based on the color defined for that ply.
-
-<div id="fig:plyexplode"></div><p></p><p>Ply Exploder</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/ply-exploder.png" width="650" />
-<h2 id="Simulation-Pre-Processing">Simulation Pre-Processing<a class="anchor-link" href="#Simulation-Pre-Processing">¶</a></h2><div id="sec:pre"></div>
-
-In the CATIA CPD (Composites Part Design) workbench, we define many of the properties that we need for a finite element simulation. The material properties and orientation can be time-consuming when pre-processing models, but in Simulia, the process is streamlined due to the workbenches being well-integrated, eg the interactive ply table. 
-
-### Loads and Boundary Conditions
-The boundary conditions are clamped edges, which constrains all 6 degrees of freedom for the surface edge (rotation and translation). The load applied is initially a $10\ KPa$ pressure applied normal to the undeformed panel surface, indicated by the yellow arrows ([figure](#fig:feasetup)).
-
-<div id="fig:feasetup"></div><p></p><p>FEA Setup</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/fea-setup.png" width="650" />
+<div id="fig:ply12"></div><p><p>Ply 1 and 2</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/ply1-2.png" width="650" /></p>
+<p>Another useful visualization is the ply exploder. The ply exploder generates a 3D visual of the individual ply stacks based on the color defined for that ply.</p>
+<div id="fig:plyexplode"></div><p><p>Ply Exploder</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/ply-exploder.png" width="650" /></p>
+<h2 id="Simulation-Pre-Processing">Simulation Pre-Processing<a class="anchor-link" href="#Simulation-Pre-Processing">¶</a></h2><div id="sec:pre"></div><p>In the CATIA CPD (Composites Part Design) workbench, we define many of the properties that we need for a finite element simulation. The material properties and orientation can be time-consuming when pre-processing models, but in Simulia, the process is streamlined due to the workbenches being well-integrated, eg the interactive ply table.</p>
+<h3 id="Loads-and-Boundary-Conditions">Loads and Boundary Conditions<a class="anchor-link" href="#Loads-and-Boundary-Conditions">¶</a></h3><p>The boundary conditions are clamped edges, which constrains all 6 degrees of freedom for the surface edge (rotation and translation). The load applied is initially a $10\ KPa$ pressure applied normal to the undeformed panel surface, indicated by the yellow arrows (<a href="#fig:feasetup">figure</a>).</p>
+<div id="fig:feasetup"></div><p><p>FEA Setup</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/fea-setup.png" width="650" /></p>
 <p>Within the Elfini workbench, additional visualization tools are available. This allows the engineer/designer to confirm designs are correct as well as making communication much easier for assembly or if modifications are necessary. One of such tools is the thickness fringe plot (<a href="#fig:fringe">figure</a>) and the ply angle plot (<a href="#fig:angleply">figure</a>).</p>
-<div id="fig:fringe"></div>
-<p>Thickness Fringe</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/thickness-fringe.png" width="650" />
-<div id="fig:angleply"></div><p></p><p>Lamina 4 angle plot</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/lamina-3-angle.png" width="650" />
+<div id="fig:fringe"></div><p><p>Thickness Fringe</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/thickness-fringe.png" width="650" /></p>
+<div id="fig:angleply"></div><p><p>Lamina 4 angle plot</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/lamina-3-angle.png" width="650" /></p>
 <p>Once we have the boundary conditions and loads applied, we can compute the model. After about 20 seconds, we have our displacement, strain, and stress calculations for each ply.</p>
-<h2 id="Post-Processing">Post-Processing<a class="anchor-link" href="#Post-Processing">¶</a></h2><div id="sec:post"></div>
-
-The simulation generates a large amount of data that can be cumbersome to digest, but using tools, such as specialized composites failure criteria, can make the analysis much easier and more robust. A summary of the important material properties (modulus of elasticity and material ultimate strength in compression and tension) are shown as a reference to the calculations. The complete material properties are shown in the Appendix in section ([Appendix](#sec:app)).
-
-<table border="1">
-<thead>
-<tr><th align="center">       Property      </th> <th align="center">S1454-G803</th> <th align="center">Glass </th> </tr>
-</thead>
-<tbody>
-<tr><td align="center">   $E_{x}$                  </td> <td align="center">   60 GPa        </td> <td align="center">   4 GPa     </td> </tr>
-<tr><td align="center">   $E_{y}$                  </td> <td align="center">   60 GPa        </td> <td align="center">   4 GPa     </td> </tr>
-<tr><td align="center">   $\sigma_{x-comp-ult}$    </td> <td align="center">   500 MPa       </td> <td align="center">   40 MPa    </td> </tr>
-<tr><td align="center">   $\sigma_{y-comp-ult}$    </td> <td align="center">   500 MPa       </td> <td align="center">   40 MPa    </td> </tr>
-<tr><td align="center">   $\sigma_{x-ten-ult}$     </td> <td align="center">   700 MPa       </td> <td align="center">   60 MPa    </td> </tr>
-<tr><td align="center">   $\sigma_{y-ten-ult}$     </td> <td align="center">   700 MPa       </td> <td align="center">   60 MPa    </td> </tr>
+<h2 id="Post-Processing">Post-Processing<a class="anchor-link" href="#Post-Processing">¶</a></h2><div id="sec:post"></div><p>The simulation generates a large amount of data that can be cumbersome to digest, but using tools, such as specialized composites failure criteria, can make the analysis much easier and more robust. A summary of the important material properties (modulus of elasticity and material ultimate strength in compression and tension) are shown as a reference to the calculations. The complete material properties are shown in the Appendix in section (<a href="#sec:app">Appendix</a>).</p>
+<p><table border="1"></table></p>
+<p><thead></thead></p>
+<p><tr><th align="center">       Property      </th> <th align="center">S1454-G803</th> <th align="center">Glass </th> </tr>
+</thead></p>
+<p><tbody></tbody></p>
+<p><tr><td align="center">   $E_{x}$                  </td> <td align="center">   60 GPa        </td> <td align="center">   4 GPa     </td> </tr></p>
+<p><tr><td align="center">   $E_{y}$                  </td> <td align="center">   60 GPa        </td> <td align="center">   4 GPa     </td> </tr></p>
+<p><tr><td align="center">   $\sigma_{x-comp-ult}$    </td> <td align="center">   500 MPa       </td> <td align="center">   40 MPa    </td> </tr></p>
+<p><tr><td align="center">   $\sigma_{y-comp-ult}$    </td> <td align="center">   500 MPa       </td> <td align="center">   40 MPa    </td> </tr></p>
+<p><tr><td align="center">   $\sigma_{x-ten-ult}$     </td> <td align="center">   700 MPa       </td> <td align="center">   60 MPa    </td> </tr></p>
+<p><tr><td align="center">   $\sigma_{y-ten-ult}$     </td> <td align="center">   700 MPa       </td> <td align="center">   60 MPa    </td> </tr>
 </tbody>
 </table>
-The availability of the field outputs is based on what the user requested in the pre-processing step. This example shows contour plots of stress, displacement, and the tsai-hill failure criterion. The mesh has been created relatively coarse for speedy calculations, but an actual engineering application should have a higher element density. Some examples of displacement visualizations are shown in figure  and . In the figure , the displacement contour lines are overlaid on a deformed model mesh based on the the 3-dimensional displacement values.
-
-<div id="fig:meshdisp"></div><p></p><p>Deformed mesh displacement plot of ply.37</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/mesh-displacement.png" width="650" />
+The availability of the field outputs is based on what the user requested in the pre-processing step. This example shows contour plots of stress, displacement, and the tsai-hill failure criterion. The mesh has been created relatively coarse for speedy calculations, but an actual engineering application should have a higher element density. Some examples of displacement visualizations are shown in figure  and . In the figure , the displacement contour lines are overlaid on a deformed model mesh based on the the 3-dimensional displacement values.</p>
+<div id="fig:meshdisp"></div><p><p>Deformed mesh displacement plot of ply.37</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/mesh-displacement.png" width="650" /></p>
 <p>The discontinuous contour plot in figure  with deformation is a simple-to-interpret visual to the analyst on the validity of the results as well seeing the large deformation areas of the structure due to the various locality of plies with the relative cumulative thickness.</p>
-<p></p><div id="fig:contdisp"></div>
-<p></p><p>Deformed contour displacement plot of ply.37</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/displacement-ply-exploded.png" width="650" />
+<div id="fig:contdisp"></div><p><p>Deformed contour displacement plot of ply.37</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/displacement-ply-exploded.png" width="650" /></p>
 <p>Stress is the measurement that is most important because our failure metric is defined as a experimentally pre-determine stress. To properly investigate this composite, each ply should be reviewed after the simulation is complete.</p>
 <p>After a load of $P_{applied}=10\ kPa$ is applied to the panel, the von-mises stress ($\sigma_{v}$) with the fiber orientation shows that, in figure  ply.34 has the largest von-mises stress.</p>
 </div>
@@ -429,8 +1155,7 @@ The availability of the field outputs is based on what the user requested in the
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><!-- Equation labels as ordinary links --></p>
-<p></p><div id="vonmises"></div>
-$$
+<div id="vonmises"></div>$$
 \begin{equation}
 \sigma_v = \sqrt{ \sigma_{1}^{2} + \sigma_{2}^{2} - \sigma_{1}\sigma_{2}}    \label{vonmises} \tag{1} 
 \end{equation}
@@ -444,16 +1169,11 @@ $$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Since this is a linear FEA problem, the results are only likely valid for small deformations, and so, the relationship between applied load and stress should be linear. Also, a common assumption in composite analysis is assuming that out-of-plane stress is 0, known as plane stress ($\sigma_{3}=0$). With these assumption, we can assume that ply.34 will be the highest risk ply, and by inspection, ply.34 does indeed have the highest stress of all the plies. The von-mises stress is a handy scalar stress equivalent due to its ease to interpret results. (although other stresses, such as principal stresses should be observed to confirm validity of results). The plots here show the mean ply stress as well as the fiber orientation of the ply.</p>
-<div id="fig:vonmises"></div>
-<p>Von-Mises Stress</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/von-mises.png" width="650" />
-
-
-
-The stress state of Ply.34 is show in an undeformed state with a contour plot of von-mises stress . When looking at the entire composite, the stress concentration is where it was expected to be, in the elongated hole. 
-
-<div id="fig:ply34stress"></div><p></p><p>Exploded plys with von-mises ply stress of ply.34</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/stress-ply-exploded.png" width="650" />
+<div id="fig:vonmises"></div><p><p>Von-Mises Stress</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/von-mises.png" width="650" /></p>
+<p>The stress state of Ply.34 is show in an undeformed state with a contour plot of von-mises stress . When looking at the entire composite, the stress concentration is where it was expected to be, in the elongated hole.</p>
+<div id="fig:ply34stress"></div><p><p>Exploded plys with von-mises ply stress of ply.34</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/stress-ply-exploded.png" width="650" /></p>
 <p>When performing a stress analysis of a composite, iterations of the calculation of stiffness must be made to calculate the global structure stiffness. Once the global stiffness is calculated, the global displacement, strain and stress is determined. However, failure of a composite often occurs first to a ply, and since plies can have various stresses due to potentially differing material properties and loading states, the local ply stress must be determined and corroborated to the material strength to determine if ply failure is anticipated. The failure criterion commonly used for composites is the tsai-hill <a href="#Daniel2006">[Daniel2006]</a>. The tsai-hill criterion is adapted from the von-mises criterion, which is defined as failure when the material yields. Typically, long-fiber composites are transversely isotropic. With this assumption, we can write the tsai-Hill criterion here <a href="#eqn:tsaihill">(2)</a>. Once this value exceeds 1, the ply is expected to fail</p>
 </div>
 </div>
@@ -464,8 +1184,7 @@ The stress state of Ply.34 is show in an undeformed state with a contour plot of
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><!-- Equation labels as ordinary links --></p>
-<p></p><div id="eqn:tsaihill"></div>
-$$
+<div id="eqn:tsaihill"></div>$$
 \begin{equation}
 1 =  \left(\frac{\sigma_{1}}{\sigma_{1u}}\right)^{2} + \left(\frac{\sigma_{2}}{\sigma_{2u}}\right)^{2}  +  \left(\frac{\tau_{12}}{\tau_{12u}}\right)^{2}  - \left(\frac{\sigma_{1} \sigma_{2}} {\sigma_{1u} }\right) \label{eqn:tsaihill} \tag{2}  
 \end{equation}
@@ -479,9 +1198,8 @@ $$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The tsai-hill criterion is easily accessible in Simulia to determine if failure is expected. The contour plots in <a href="#fig:tsaihill">figure</a> is for our initial loading case of $10\ KPa$, which is well below 1, indicating that our composite part is not likely to fail. Also of importance is ply.34, which has the largest tsai-hill parameter, or nearest to failure, which agrees with our linear stress-load assumption.</p>
-<p></p><div id="fig:tsaihill"></div>
-<p></p><p>Tsai-Hill Failure Criterion</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/tsai-hill.png" width="650" />
+<div id="fig:tsaihill"></div><p><p>Tsai-Hill Failure Criterion</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/tsai-hill.png" width="650" /></p>
 <p>For this component, the pressure it must withstand is 125 kPa, so if we increase the pressure load, the tsai-hill failure criterion exceeds 1.0 and failure is expected in ply.34. The principal local stress were observed to be:</p>
 </div>
 </div>
@@ -554,14 +1272,9 @@ $$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This discrepancy is difficult to prescribe, but it is likely due to the coarseness of the mesh. The hand-calculation versus the Simulia value is a considerable difference, so a finer mesh should be used. But, no failure criterion is deterministic, so the value being relatively close to 1 would indicate that failure is probable and a redesign should be implemented.</p>
-<div id="fig:finalfail"></div>
-<p>Final Failure of the composite is ply 34</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/final-failure.png" width="650" />
-
-
-
-## Summary
-<div id="sec:sum"></div><p>An example of a composite stress analysis using CATIA-Simulia was shown. The composite properties were defined in CATIA's composite part design (CPD) workbench, and imported into Simulia FEA and solved using the Elfini FEA workbench as a 2D, plane stress surface. The tsai-hill criterion was used to evaluate each ply and it's severity of stress relative to the strength. Ply.34 was found to be at the highest risk of failure and future designs of this panel should use this information to improve the strength, minimize the deformation, utilize different materials and layups. 
+<div id="fig:finalfail"></div><p><p>Final Failure of the composite is ply 34</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/final-failure.png" width="650" /></p>
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h2><div id="sec:sum"></div><p>An example of a composite stress analysis using CATIA-Simulia was shown. The composite properties were defined in CATIA's composite part design (CPD) workbench, and imported into Simulia FEA and solved using the Elfini FEA workbench as a 2D, plane stress surface. The tsai-hill criterion was used to evaluate each ply and it's severity of stress relative to the strength. Ply.34 was found to be at the highest risk of failure and future designs of this panel should use this information to improve the strength, minimize the deformation, utilize different materials and layups. 
 The files to execute this example can be freely obtained from the author if requested.</p>
 <h2 id="References">References<a class="anchor-link" href="#References">¶</a></h2><ol>
 <li><div id="Daniel2006"></div> <strong>I. M. Daniel and O. Ishai</strong>. 
@@ -570,19 +1283,16 @@ The files to execute this example can be freely obtained from the author if requ
 Oxford University Press,
 2006.</li>
 </ol>
-<h2 id="Appendix">Appendix<a class="anchor-link" href="#Appendix">¶</a></h2><div id="sec:app"></div>
-
-The glass material properties, which refers to an epoxy, with $E=4\ GPA$, and $\sigma_{ult}=60 MPa$
-
-<div id="fig:glass"></div><p></p><p>Glass Properties</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/glass.png" width="650" />
+<h2 id="Appendix">Appendix<a class="anchor-link" href="#Appendix">¶</a></h2><div id="sec:app"></div><p>The glass material properties, which refers to an epoxy, with $E=4\ GPA$, and $\sigma_{ult}=60 MPa$</p>
+<div id="fig:glass"></div><p><p>Glass Properties</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/glass.png" width="650" /></p>
 <p>and the fiber material, with $E=60\ GPA$ and a $\sigma_{ult}=700 MPa$. This is the strength that we will use for our failure criteria. The constitutive properties are isotropic, however the tensile/compressive strength vary, which will ultimately determine the maximum pressure that can be applied.</p>
-<p></p><div id="fig:fiber"></div>
-<p></p><p>Lamina Properties</p>
-<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/S1454-G803.png" width="650" />
+<div id="fig:fiber"></div><p><p>Lamina Properties</p>
+<img src="/notebooks/Composites-Design-and-Finite-Element-Analysis-with-CATIA-and-SIMULIA/fig/S1454-G803.png" width="650" /></p>
 </div>
 </div>
 </div>
+
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -649,113 +1359,85 @@ The glass material properties, which refers to an epoxy, with $E=4\ GPA$, and $\
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-
+<!-- Sidebar -->
 <section class="well well-sm">
-    <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
-                <li class="list-group-item"><a href="https://github.com/nagordon"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
-                <li class="list-group-item"><a href="http://www.reddit.com/user/nagordon"><i class="fa fa-reddit-square fa-lg"></i> Reddit</a></li>
-                <li class="list-group-item"><a href="http://www.instructables.com/member/nagordon"><i class="fa fa-instructables-square fa-lg"></i> Instructables</a></li>
-                <li class="list-group-item"><a href="http://stackoverflow.com/users/2438993/nagordon"><i class="fa fa-stackoverflow-square fa-lg"></i> StackOverflow</a></li>
-              </ul>
-            </li>
+  <ul class="list-group list-group-flush">
 
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                <ul class="list-group" id="recentposts">
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/08/20/pythoncode-vs-excel/">
-                            Calculations with Python Code or Excel Spreadsheets
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/08/14/logical-indexing-with-python-excel/">
-                            Logical Indexing with Python and Excel
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/06/05/sage-embed/">
-                            Sage Math Tool
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/05/07/what-open-source-means/">
-                            Understanding and using technology
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/05/06/interactive-integral-deritive/">
-                            Derivative and Integral Interactive Tool
-                        </a>
-                    </li>
-                </ul>
-            </li>
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+    <li class="list-group-item"><a href="https://github.com/nagordon"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="http://stackoverflow.com/users/2438993/nagordon"><i class="fa fa-stackoverflow-square fa-lg"></i> StackOverflow</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
 
-            <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
-                <ul class="list-group" id="categories">
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/aviation.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Aviation
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/computing.html">
-                            <i class="fa fa-folder-open fa-lg"></i> computing
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/engineering.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Engineering
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/tools.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Tools
-                        </a>
-                    </li>
-                </ul>
-            </li>
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/08/20/pythoncode-vs-excel/">Calculations with Python Code or Excel Spreadsheets</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/08/14/logical-indexing-with-python-excel/">Logical Indexing with Python and Excel</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/06/05/sage-embed/">Sage Math Tool</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/05/07/what-open-source-means/">Understanding and using technology</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/05/06/interactive-integral-deritive/">Derivative and Integral Interactive Tool</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
 
-            <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group list-inline tagcloud" id="tags">
-                </ul>
-            </li>
-
-
-
-    <li class="list-group-item"><h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
-        <div id="gh_repos">
-            <p class="list-group-item">Status updating...</p>
-        </div>
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/aviation.html"><i class="fa fa-folder-open fa-lg"></i>Aviation</a>
     </li>
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://getpelican.com/" target="_blank">
-                Pelican
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://www.scipy.org/" target="_blank">
-                Scipy.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
-            </a>
-        </li>
-      </ul>
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/computing.html"><i class="fa fa-folder-open fa-lg"></i>computing</a>
     </li>
-    </ul>
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/engineering.html"><i class="fa fa-folder-open fa-lg"></i>Engineering</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/tools.html"><i class="fa fa-folder-open fa-lg"></i>Tools</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://getpelican.com/" target="_blank">Pelican</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://python.org/" target="_blank">Python.org</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.scipy.org/" target="_blank">Scipy.org</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
 </section>
-            </aside>
+<!-- End Sidebar -->            </aside>
         </div>
     </div>
 </div>
@@ -764,7 +1446,7 @@ The glass material properties, which refers to an epoxy, with $E=4\ GPA$, and $\
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Neal Gordon
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
@@ -780,27 +1462,28 @@ The glass material properties, which refers to an epoxy, with $E=4\ GPA$, and $\
 <script src="http://ifcuriousthenlearn.com/theme/js/respond.min.js"></script>
 
     <script src="http://ifcuriousthenlearn.com/theme/js/bodypadding.js"></script>
-    <!-- GitHub JS -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            if (!window.jXHR) {
-                var jxhr = document.createElement('script');
-                jxhr.type = 'text/javascript';
-                jxhr.src = 'http://ifcuriousthenlearn.com/theme/js/jXHR.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(jxhr, s);
-            }
 
-            github.showRepos({
-                user: 'nagordon',
-                count: 5,
-                skip_forks: false,
-                target: '#gh_repos'
-            });
-        });
-    </script>
-    <script src="http://ifcuriousthenlearn.com/theme/js/github.js" type="text/javascript"></script>
-    <!-- End GitHub JS Code -->
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'http://ifcuriousthenlearn.com/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'nagordon',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="http://ifcuriousthenlearn.com/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
     <!-- Disqus -->
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -816,6 +1499,24 @@ The glass material properties, which refers to an epoxy, with $E=4\ GPA$, and $\
         }());
     </script>
     <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-65272251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
 
 </body>
 </html>

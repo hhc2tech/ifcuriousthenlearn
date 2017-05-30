@@ -8,162 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-
-
-<style type="text/css">
-
-/*some stuff for output/input prompts*/
-div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.cell.selected{border-radius:4px;border:thin #ababab solid}
-div.cell.edit_mode{border-radius:4px;border:thin #008000 solid}
-div.cell{width:100%;padding:5px 5px 5px 0;margin:0;outline:none}
-div.prompt{min-width:11ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}
-@media (max-width:480px){div.prompt{text-align:left}}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
-div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;line-height:1.21429em}
-div.prompt:empty{padding-top:0;padding-bottom:0}
-div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
-div.inner_cell{width:90%;}
-div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;}
-div.input_prompt{color:navy;border-top:1px solid transparent;}
-div.output_wrapper{margin-top:5px;position:relative;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
-div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:4px;-webkit-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);-moz-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);}
-div.output_collapsed{margin:0px;padding:0px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
-div.out_prompt_overlay{height:100%;padding:0px 0.4em;position:absolute;border-radius:4px;}
-div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000000;-moz-box-shadow:inset 0 0 1px #000000;box-shadow:inset 0 0 1px #000000;background:rgba(240, 240, 240, 0.5);}
-div.output_prompt{color:darkred;}
-
-a.anchor-link:link{text-decoration:none;padding:0px 20px;visibility:hidden;}
-h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible;}
-/* end stuff for output/input prompts*/
-
-
-.highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
-</style>
-
-<style type="text/css">
-/* Overrides of notebook CSS for static HTML export */
-div.entry-content {
-  overflow: visible;
-  padding: 8px;
-}
-.input_area {
-  padding: 0.2em;
-}
-
-a.heading-anchor {
- white-space: normal;
-}
-
-.rendered_html
-code {
- font-size: .8em;
-}
-
-pre.ipynb {
-  color: black;
-  background: #f7f7f7;
-  border: none;
-  box-shadow: none;
-  margin-bottom: 0;
-  padding: 0;
-  margin: 0px;
-  font-size: 13px;
-}
-
-/* remove the prompt div from text cells */
-div.text_cell .prompt {
-    display: none;
-}
-
-/* remove horizontal padding from text cells, */
-/* so it aligns with outer body text */
-div.text_cell_render {
-    padding: 0.5em 0em;
-}
-
-img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
-</style>
-
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-<script type="text/javascript">
-init_mathjax = function() {
-    if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-            },
-            displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-    }
-}
-init_mathjax();
-</script>
     <link href="http://ifcuriousthenlearn.com/images/earth.png" rel="icon">
 
 <link rel="canonical" href="http://ifcuriousthenlearn.com/blog/2015/08/28/intro-to-the-windows-command-line/">
@@ -186,15 +30,19 @@ init_mathjax();
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://ifcuriousthenlearn.com/theme/css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="http://ifcuriousthenlearn.com/theme/css/bootstrap.journal.min.css" type="text/css"/>
     <link href="http://ifcuriousthenlearn.com/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="http://ifcuriousthenlearn.com/theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="http://ifcuriousthenlearn.com/theme/css/style.css" type="text/css"/>
 
+        <link href="http://ifcuriousthenlearn.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="if curious: then learn ATOM Feed"/>
 
 
 
+        <link href="http://ifcuriousthenlearn.com/feeds/computing.atom.xml" type="application/atom+xml" rel="alternate"
+              title="if curious: then learn Computing ATOM Feed"/>
 
 </head>
 <body>
@@ -230,7 +78,6 @@ if curious: then learn            </a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="http://ifcuriousthenlearn.com/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -277,20 +124,20 @@ if curious: then learn            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <h2>Introduction</h2>
-<p>Side Note - I've searched online to find info on many things related to technology. A typical search will yield a lot of blogs and tutorials, and way down the list there is documentation from the company/team that created the product. All this is OK, but i've found if you really want to learn something, the best way is a good old-fashioned book (pdf or print). The ideas are whole and complete, and the quality is much higher than a typical blog post (..yea, I know, this is a blog, and no it is not as good as a book). 
-And now for the big surprise. Most of my content is from books. I did not invent this stuff. And I think it is important to give credit where credit is due. For more information, check out an  A+ certification book (I got mine from goodwill for 3 bucks, isnb-9780071745154). </p>
+<p>Side Note - I've searched online to find info on many things related to technology. A typical search will yield a lot of blogs and tutorials, and way down the list there is documentation from the company/team that created the product. All this is OK, but i've found if you really want to learn something, the best way is a good old-fashioned book (pdf or print). The ideas are whole and complete, and the quality is much higher than a typical blog post (..yea, I know, this is a blog, and no it is not as good as a book).
+And now for the big surprise. Most of my content is from books. I did not invent this stuff. And I think it is important to give credit where credit is due. For more information, check out an  A+ certification book (I got mine from goodwill for 3 bucks, isnb-9780071745154).</p>
 <p>Ok, on to the post. This tutorial only applies to the windows command line, not powershell. To start out, I am not a huge Windows fan. It is expensive, and I am often disappointed in the stability. But, most of us use it at work and home, so we should be using to the best of our ability. So this should help extend your skills at doing basic stuff. There are a few things that I will show you that I prefer to use a mouse and keyboard with, but there are a few things I would rather use the command line with (eg, moving files, mouse, finding the ip address of the computer, keyboard). Also, I am using Windows 7.</p>
 <p>Lets get started. To get to a command prompt, we can <strong>hold shift and right-click</strong> and select <strong>open command window here</strong>. This is nice because we do not have to change the directory to the our directory we want to work from. You can also just type <code>cmd</code> in the start menu.</p>
 <p>If you ever run a command and it is taking forever to finish, we can terminate the command with <strong>ctrl+c</strong> while in the command prompt.</p>
 <p>if you need general help on any command, use</p>
-<div class="highlight"><pre>help
+<div class="highlight"><pre><span></span>help
 </pre></div>
 
 
-<p>Now, lets get our keyboard hands "dirty". </p>
+<p>Now, lets get our keyboard hands "dirty".</p>
 <h2>File Information</h2>
 <p>The first command is <strong>dir</strong>. This shows the content of the directory (dir) you are in.</p>
-<div class="highlight"><pre><span class="p">&gt;</span> dir
+<div class="highlight"><pre><span></span><span class="p">&gt;</span> dir
 
  Volume in drive C has no label.
  Volume Serial Number is 5033-5C23
@@ -308,18 +155,18 @@ And now for the big surprise. Most of my content is from books. I did not invent
 </pre></div>
 
 
-<p>This is an easy way to see all the files and folders in our current directory. If you want to preserve this information, we can redirect the output to a file <em>tmp.txt</em> with </p>
-<div class="highlight"><pre><span class="k">dir</span> <span class="p">&gt;</span> tmp.txt
+<p>This is an easy way to see all the files and folders in our current directory. If you want to preserve this information, we can redirect the output to a file <em>tmp.txt</em> with</p>
+<div class="highlight"><pre><span></span><span class="k">dir</span> <span class="p">&gt;</span> tmp.txt
 </pre></div>
 
 
 <p>To get help on the command dir, use</p>
-<div class="highlight"><pre>dir /?
+<div class="highlight"><pre><span></span>dir /?
 </pre></div>
 
 
 <p>If you just want to see the filenames in 5 columns, we can use a <em>switch</em> with the syntax <em>/W</em>, which looks like this</p>
-<div class="highlight"><pre>&gt; dir /W
+<div class="highlight"><pre><span></span>&gt; dir /W
  Volume in drive C has no label.
  Volume Serial Number is 5033-5C23
 
@@ -333,7 +180,7 @@ And now for the big surprise. Most of my content is from books. I did not invent
 
 <h3>Wildcards</h3>
 <p>If there are alot of files, using wildcards can reduce the clutter. Also note the <code>::</code> are commets.</p>
-<div class="highlight"><pre>:: finds all files
+<div class="highlight"><pre><span></span>:: finds all files
 dir *.*
 
 :: finds all files with the extension xlsx
@@ -349,7 +196,7 @@ dir file1.txt
 
 <h3>Tree</h3>
 <p>Another cool visual is with the <strong>tree</strong> command. Just using the tree command only shows the folders in the current directory, which shows up fine in the command window, but is not ascii text.</p>
-<div class="highlight"><pre>&gt; tree
+<div class="highlight"><pre><span></span>&gt; tree
 Folder PATH listing
 Volume serial number is 5033-5C23
 C:.
@@ -358,12 +205,12 @@ C:.
 
 
 <p>If you want to see ALL the files on your current disk, use the backslash. This may take a while to run on your system drive (C), so remember <strong>ctrl+c</strong> to cancel</p>
-<div class="highlight"><pre>tree \
+<div class="highlight"><pre><span></span>tree \
 </pre></div>
 
 
 <p>I prefer being able to copy and paste those results into documents. Lets try and figure out how to change the command to give me ascii characters.</p>
-<div class="highlight"><pre>&gt; tree /?
+<div class="highlight"><pre><span></span>&gt; tree /?
 C: /?
 Graphically displays the folder structure of a drive or path.
 
@@ -375,7 +222,7 @@ TREE [drive:][path] [/F] [/A]
 
 
 <p>Ah ha. We need to add switches to do that. If you want to see the folders and files in the current directory, try</p>
-<div class="highlight"><pre>&gt; tree /F
+<div class="highlight"><pre><span></span>&gt; tree /F
 
 Folder PATH listing
 Volume serial number is 5033-5C23
@@ -390,13 +237,13 @@ C:.
 
 
 <p>Lastly, to create an ascii format list of all files and folders and dump it to a text file, try</p>
-<div class="highlight"><pre>tree /F /A &gt; tree.txt
+<div class="highlight"><pre><span></span>tree /F /A &gt; tree.txt
 </pre></div>
 
 
 <h3>attrib</h3>
 <p>We can also use <strong>attrib</strong> to get file information in the current directory. The <em>A</em> stands for archive.</p>
-<div class="highlight"><pre>&gt; attrib
+<div class="highlight"><pre><span></span>&gt; attrib
 
 A            C:\Users\ngordon\Desktop\test\file1.txt
 A            C:\Users\ngordon\Desktop\test\file2.xlsx
@@ -407,7 +254,7 @@ A            C:\Users\ngordon\Desktop\test\tmp.txt
 
 <h2>Navigating</h2>
 <p>If you want to navigate your system, the cd command is the ticket, to go towards the root of the drive, use <strong>cd</strong></p>
-<div class="highlight"><pre>cd ..
+<div class="highlight"><pre><span></span>cd ..
 
 :: or to go directly to the root
 
@@ -419,8 +266,8 @@ cd ..\..
 </pre></div>
 
 
-<p>and to go into another folder use </p>
-<div class="highlight"><pre>cd test
+<p>and to go into another folder use</p>
+<div class="highlight"><pre><span></span>cd test
 
 :: or for multiple folders
 
@@ -430,27 +277,27 @@ cd Desktop\test\another-test
 
 <p>This can become tedious, so I'd recommend using <strong>tab</strong> when typing out names. It not only reduces the amount of typing you have to do but also reduced typos.</p>
 <p>Lets say you want to search your usb drive. To switch to a different drive other than the default <strong>C:</strong>, just type</p>
-<div class="highlight"><pre>E:
+<div class="highlight"><pre><span></span>E:
 </pre></div>
 
 
 <p>Another modern and handy way to navigate is typing <code>cd</code> and dragging and dropping a folder into the command prompt and hitting enter. This can save some time on those deep folder structures.</p>
 <h2>Managing Folders and Files</h2>
 <p>OK, lets make some stuff. To create and destroy a new directory, use <strong>md</strong> and <strong>rd</strong></p>
-<div class="highlight"><pre>:: create directory
+<div class="highlight"><pre><span></span>:: create directory
 md newfolder
 
 
 :: destory an empty directory
 rd newfolder
 
-:: BE CAREFUL - recursively destroy directory, and all files and subfolders 
+:: BE CAREFUL - recursively destroy directory, and all files and subfolders
 rd newfolder /S
 </pre></div>
 
 
 <p>To copy a single file or groups of files, use <strong>copy</strong></p>
-<div class="highlight"><pre>copy file1.txt file10.txt
+<div class="highlight"><pre><span></span>copy file1.txt file10.txt
 
 :: or to copy to a different folder
 
@@ -463,7 +310,7 @@ copy *.txt another-test
 
 
 <p>To copy an entire directory, we can use <strong>xcopy</strong></p>
-<div class="highlight"><pre>:: copy directory another-test and skips empty subdirectories to another-test2
+<div class="highlight"><pre><span></span>:: copy directory another-test and skips empty subdirectories to another-test2
 xcopy another-test another-test2
 
 :: to include empty subdirectories, use switch
@@ -472,7 +319,7 @@ xcopy another-test another-test3 /E
 
 
 <p>We can rename files or folders with <strong>ren</strong></p>
-<div class="highlight"><pre>ren file1.txt text1.txt
+<div class="highlight"><pre><span></span>ren file1.txt text1.txt
 
 :: or more complicated names with spaces
 ren text1.txt &quot;text 1.txt&quot;
@@ -483,7 +330,7 @@ ren another-test another-test5
 
 
 <p>To delete a file or files, use <strong>del</strong></p>
-<div class="highlight"><pre>del tmp.txt
+<div class="highlight"><pre><span></span>del tmp.txt
 
 :: deletes all text files in the current directory
 del *.txt
@@ -493,42 +340,42 @@ del *.txt
 <h2>Creating New files</h2>
 <p>It appears that Microsoft deprecated <em>edit</em>, the command line editor. For those of you familiar with <a href="http://www.openvim.com/">vim</a> or <a href="http://www.nano-editor.org/">nano</a>, this are available on windows, so check them out. But for now, we can use the echo command, to create text files and append them</p>
 <p>We can use <strong>echo</strong> to print text to the command window</p>
-<div class="highlight"><pre>echo hi there
+<div class="highlight"><pre><span></span>echo hi there
 </pre></div>
 
 
 <p>Or we can redirect the text to a file</p>
-<div class="highlight"><pre>echo this is my first command line text file &gt; file8.txt
+<div class="highlight"><pre><span></span>echo this is my first command line text file &gt; file8.txt
 echo this is the second line &gt;&gt; file8.txt
 echo this is the third line &gt;&gt; file8.txt
 </pre></div>
 
 
 <p>for more complicated stuff, we can always open the file with the default text editor notepad.</p>
-<div class="highlight"><pre>notepad file8.txt
+<div class="highlight"><pre><span></span>notepad file8.txt
 </pre></div>
 
 
 <h2>Automating commands with a batch file</h2>
-<p>A batch file (*.bat) is a simple windows script that can automate simple tasks. </p>
-<div class="highlight"><pre><span class="k">echo</span> echo hi there <span class="p">&gt;</span> hello.bat
+<p>A batch file (*.bat) is a simple windows script that can automate simple tasks.</p>
+<div class="highlight"><pre><span></span><span class="k">echo</span> echo hi there <span class="p">&gt;</span> hello.bat
 </pre></div>
 
 
 <p>Now we can run the batch file by simply typing the name and executing it</p>
-<div class="highlight"><pre>hello.bat
+<div class="highlight"><pre><span></span>hello.bat
 </pre></div>
 
 
 <p>To pause to execution of a bat file, add <strong>pause</strong> to the end. This is nice if you have an error in the file and want to see what the error is, otherwise it will just close the window</p>
-<div class="highlight"><pre>:: waits for keyboard input from user
+<div class="highlight"><pre><span></span>:: waits for keyboard input from user
 pause
 </pre></div>
 
 
 <h2>Advanced command line</h2>
 <p>To see all the settings Windows loads by default, use</p>
-<div class="highlight"><pre>&gt; set
+<div class="highlight"><pre><span></span>&gt; set
 ALLUSERSPROFILE=C:\ProgramData
 CommonProgramFiles=C:\Program Files\Common Files
 CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
@@ -542,7 +389,7 @@ Path=C:\Program Files\Common Files\Microsoft Shared\Windows Live
 
 <p>A common task is adding a program, exe or other, to the default list windows looks for when running. If we want to be able to run a program without executing the command from that directory, we have to add it to the path variable</p>
 <p>Lets switch to the root of our c drive and create a folder called batch, and create a batch file that says <em>hi there</em>, and add it to the path so we can be greeted anywhere we are</p>
-<div class="highlight"><pre><span class="p">::</span> <span class="k">go</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">root</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">c</span> <span class="nx">drive</span>
+<div class="highlight"><pre><span></span><span class="p">::</span> <span class="k">go</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">root</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">c</span> <span class="nx">drive</span>
 <span class="nx">cd</span> \
 
 <span class="p">::</span> <span class="nx">make</span> <span class="nx">a</span> <span class="nx">new</span> <span class="nx">directory</span>
@@ -563,15 +410,15 @@ Path=C:\Program Files\Common Files\Microsoft Shared\Windows Live
 
 
 <p>Now lets test and make sure the system knows where to look for my custom batch scripts.</p>
-<div class="highlight"><pre>&gt; hello
+<div class="highlight"><pre><span></span>&gt; hello
 hi there
 </pre></div>
 
 
-<p>Excellent. We have covered the basics. </p>
+<p>Excellent. We have covered the basics.</p>
 <h2>Networking Information</h2>
 <p>I have found myself using the command line alot when learning about networking. Here are some commands to help you get started with networking info.</p>
-<div class="highlight"><pre>:: robust command for networking options, such as seeing things on the network
+<div class="highlight"><pre><span></span>:: robust command for networking options, such as seeing things on the network
 net view
 
 :: test the communication of another ip address
@@ -589,7 +436,7 @@ tracert www.ifcuriousthenlearn.com
 
 
 <h2>Summary</h2>
-<p>We have covered the basics to operate a windows command line. For a lot of work, it is faster than clicking a mouse around, but it takes some practice. There are also some great fundamental tools available found at the command line nearest you. Understanding what is going on in a computer is much easier when you can operate the command lines, as it is an integral part of any operating system. I hope you found this useful, and please comment with any suggestions. </p>
+<p>We have covered the basics to operate a windows command line. For a lot of work, it is faster than clicking a mouse around, but it takes some practice. There are also some great fundamental tools available found at the command line nearest you. Understanding what is going on in a computer is much easier when you can operate the command lines, as it is an integral part of any operating system. I hope you found this useful, and please comment with any suggestions.</p>
 <p>Stay Curious!  </p>
             </div>
             <!-- /.entry-content -->
@@ -629,113 +476,85 @@ tracert www.ifcuriousthenlearn.com
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-
+<!-- Sidebar -->
 <section class="well well-sm">
-    <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
-                <li class="list-group-item"><a href="https://github.com/nagordon"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
-                <li class="list-group-item"><a href="http://www.reddit.com/user/nagordon"><i class="fa fa-reddit-square fa-lg"></i> Reddit</a></li>
-                <li class="list-group-item"><a href="http://www.instructables.com/member/nagordon"><i class="fa fa-instructables-square fa-lg"></i> Instructables</a></li>
-                <li class="list-group-item"><a href="http://stackoverflow.com/users/2438993/nagordon"><i class="fa fa-stackoverflow-square fa-lg"></i> StackOverflow</a></li>
-              </ul>
-            </li>
+  <ul class="list-group list-group-flush">
 
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                <ul class="list-group" id="recentposts">
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/08/20/pythoncode-vs-excel/">
-                            Calculations with Python Code or Excel Spreadsheets
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/08/14/logical-indexing-with-python-excel/">
-                            Logical Indexing with Python and Excel
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/06/05/sage-embed/">
-                            Sage Math Tool
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/05/07/what-open-source-means/">
-                            Understanding and using technology
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/05/06/interactive-integral-deritive/">
-                            Derivative and Integral Interactive Tool
-                        </a>
-                    </li>
-                </ul>
-            </li>
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+    <li class="list-group-item"><a href="https://github.com/nagordon"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="http://stackoverflow.com/users/2438993/nagordon"><i class="fa fa-stackoverflow-square fa-lg"></i> StackOverflow</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
 
-            <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
-                <ul class="list-group" id="categories">
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/aviation.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Aviation
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/computing.html">
-                            <i class="fa fa-folder-open fa-lg"></i> computing
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/engineering.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Engineering
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/tools.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Tools
-                        </a>
-                    </li>
-                </ul>
-            </li>
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/08/20/pythoncode-vs-excel/">Calculations with Python Code or Excel Spreadsheets</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/08/14/logical-indexing-with-python-excel/">Logical Indexing with Python and Excel</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/06/05/sage-embed/">Sage Math Tool</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/05/07/what-open-source-means/">Understanding and using technology</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/05/06/interactive-integral-deritive/">Derivative and Integral Interactive Tool</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
 
-            <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group list-inline tagcloud" id="tags">
-                </ul>
-            </li>
-
-
-
-    <li class="list-group-item"><h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
-        <div id="gh_repos">
-            <p class="list-group-item">Status updating...</p>
-        </div>
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/aviation.html"><i class="fa fa-folder-open fa-lg"></i>Aviation</a>
     </li>
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://getpelican.com/" target="_blank">
-                Pelican
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://www.scipy.org/" target="_blank">
-                Scipy.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
-            </a>
-        </li>
-      </ul>
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/computing.html"><i class="fa fa-folder-open fa-lg"></i>computing</a>
     </li>
-    </ul>
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/engineering.html"><i class="fa fa-folder-open fa-lg"></i>Engineering</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/tools.html"><i class="fa fa-folder-open fa-lg"></i>Tools</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://getpelican.com/" target="_blank">Pelican</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://python.org/" target="_blank">Python.org</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.scipy.org/" target="_blank">Scipy.org</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
 </section>
-            </aside>
+<!-- End Sidebar -->            </aside>
         </div>
     </div>
 </div>
@@ -744,7 +563,7 @@ tracert www.ifcuriousthenlearn.com
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Neal Gordon
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
@@ -760,27 +579,28 @@ tracert www.ifcuriousthenlearn.com
 <script src="http://ifcuriousthenlearn.com/theme/js/respond.min.js"></script>
 
     <script src="http://ifcuriousthenlearn.com/theme/js/bodypadding.js"></script>
-    <!-- GitHub JS -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            if (!window.jXHR) {
-                var jxhr = document.createElement('script');
-                jxhr.type = 'text/javascript';
-                jxhr.src = 'http://ifcuriousthenlearn.com/theme/js/jXHR.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(jxhr, s);
-            }
 
-            github.showRepos({
-                user: 'nagordon',
-                count: 5,
-                skip_forks: false,
-                target: '#gh_repos'
-            });
-        });
-    </script>
-    <script src="http://ifcuriousthenlearn.com/theme/js/github.js" type="text/javascript"></script>
-    <!-- End GitHub JS Code -->
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'http://ifcuriousthenlearn.com/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'nagordon',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="http://ifcuriousthenlearn.com/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
     <!-- Disqus -->
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -796,6 +616,24 @@ tracert www.ifcuriousthenlearn.com
         }());
     </script>
     <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-65272251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
 
 </body>
 </html>

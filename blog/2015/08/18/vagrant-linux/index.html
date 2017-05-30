@@ -8,162 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-
-
-<style type="text/css">
-
-/*some stuff for output/input prompts*/
-div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.cell.selected{border-radius:4px;border:thin #ababab solid}
-div.cell.edit_mode{border-radius:4px;border:thin #008000 solid}
-div.cell{width:100%;padding:5px 5px 5px 0;margin:0;outline:none}
-div.prompt{min-width:11ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}
-@media (max-width:480px){div.prompt{text-align:left}}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
-div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;line-height:1.21429em}
-div.prompt:empty{padding-top:0;padding-bottom:0}
-div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
-div.inner_cell{width:90%;}
-div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;}
-div.input_prompt{color:navy;border-top:1px solid transparent;}
-div.output_wrapper{margin-top:5px;position:relative;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
-div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:4px;-webkit-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);-moz-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);}
-div.output_collapsed{margin:0px;padding:0px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
-div.out_prompt_overlay{height:100%;padding:0px 0.4em;position:absolute;border-radius:4px;}
-div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000000;-moz-box-shadow:inset 0 0 1px #000000;box-shadow:inset 0 0 1px #000000;background:rgba(240, 240, 240, 0.5);}
-div.output_prompt{color:darkred;}
-
-a.anchor-link:link{text-decoration:none;padding:0px 20px;visibility:hidden;}
-h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible;}
-/* end stuff for output/input prompts*/
-
-
-.highlight-ipynb .hll { background-color: #ffffcc }
-.highlight-ipynb  { background: #f8f8f8; }
-.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
-.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
-.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight-ipynb .o { color: #666666 } /* Operator */
-.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
-.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
-.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
-.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
-.highlight-ipynb .go { color: #888888 } /* Generic.Output */
-.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
-.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
-.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
-.highlight-ipynb .m { color: #666666 } /* Literal.Number */
-.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
-.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
-.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
-.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight-ipynb .no { color: #880000 } /* Name.Constant */
-.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
-.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
-.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
-.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
-.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
-.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
-.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
-.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
-.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
-</style>
-
-<style type="text/css">
-/* Overrides of notebook CSS for static HTML export */
-div.entry-content {
-  overflow: visible;
-  padding: 8px;
-}
-.input_area {
-  padding: 0.2em;
-}
-
-a.heading-anchor {
- white-space: normal;
-}
-
-.rendered_html
-code {
- font-size: .8em;
-}
-
-pre.ipynb {
-  color: black;
-  background: #f7f7f7;
-  border: none;
-  box-shadow: none;
-  margin-bottom: 0;
-  padding: 0;
-  margin: 0px;
-  font-size: 13px;
-}
-
-/* remove the prompt div from text cells */
-div.text_cell .prompt {
-    display: none;
-}
-
-/* remove horizontal padding from text cells, */
-/* so it aligns with outer body text */
-div.text_cell_render {
-    padding: 0.5em 0em;
-}
-
-img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
-</style>
-
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-<script type="text/javascript">
-init_mathjax = function() {
-    if (window.MathJax) {
-        // MathJax loaded
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-            },
-            displayAlign: 'left', // Change this to 'center' to center equations.
-            "HTML-CSS": {
-                styles: {'.MathJax_Display': {"margin": 0}}
-            }
-        });
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-    }
-}
-init_mathjax();
-</script>
     <link href="http://ifcuriousthenlearn.com/images/earth.png" rel="icon">
 
 <link rel="canonical" href="http://ifcuriousthenlearn.com/blog/2015/08/18/vagrant-linux/">
@@ -185,15 +29,19 @@ init_mathjax();
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://ifcuriousthenlearn.com/theme/css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="http://ifcuriousthenlearn.com/theme/css/bootstrap.journal.min.css" type="text/css"/>
     <link href="http://ifcuriousthenlearn.com/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="http://ifcuriousthenlearn.com/theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="http://ifcuriousthenlearn.com/theme/css/style.css" type="text/css"/>
 
+        <link href="http://ifcuriousthenlearn.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="if curious: then learn ATOM Feed"/>
 
 
 
+        <link href="http://ifcuriousthenlearn.com/feeds/computing.atom.xml" type="application/atom+xml" rel="alternate"
+              title="if curious: then learn Computing ATOM Feed"/>
 
 </head>
 <body>
@@ -229,7 +77,6 @@ if curious: then learn            </a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="http://ifcuriousthenlearn.com/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -290,7 +137,7 @@ There are other programs that can perform a similar task as what we are trying t
 </blockquote>
 <h2>Getting Started</h2>
 <h3>1. Installation</h3>
-<p>OK, time to get our hands dirty. There are a few programs we need to install before we get to vagrant, so lets do that first. </p>
+<p>OK, time to get our hands dirty. There are a few programs we need to install before we get to vagrant, so lets do that first.</p>
 <h4>Git Install (~10 MB)</h4>
 <p>git is a source control program that is awesome to use, but has a steep learning curve. All we need from this install is mysysgit, which is a windows bash terminal, which is like the windows command line for Linux. Download and install <a href="https://git-scm.com/downloads">git</a> and select the defaults. At the end of the install, select <code>[x] git bash here</code> to give us an option to start a bash command prompt with a right-click of the mouse in our folder</p>
 <h4>VirtualBox Install (~110 MB)</h4>
@@ -306,8 +153,8 @@ And lastly, after that nice explanation, don't use windows command line, use pow
 <p>I would recommend doing everything in gitbash because it is good practice for a real Linux bash terminal and we can use ssh all in the same window.</p>
 <h3>2. Download Base Image (~1 GB)</h3>
 <p>To make future deployments fast lets grab a base image of Linux Ubuntu 14.04. Go to your windows desktop and launch a windows command line as described previously, or, I prefer using gitbash. Note, comments in gitbash are #, so do not type those</p>
-<p>Lets add Ubuntu Server 14.04 LTS 62-bit image to our local vagrant images. Or browse the <a href="https://atlas.hashicorp.com/boxes/search">catalog</a> for your preferred image </p>
-<div class="highlight"><pre>vagrant box add ubuntu/trusty64
+<p>Lets add Ubuntu Server 14.04 LTS 62-bit image to our local vagrant images. Or browse the <a href="https://atlas.hashicorp.com/boxes/search">catalog</a> for your preferred image</p>
+<div class="highlight"><pre><span></span>vagrant box add ubuntu/trusty64
 <span class="c1"># or hashicorp/precise64 for a 12.04 LTS 64 machine</span>
 <span class="c1"># or chef/ubuntu-14.04  for a base 14.04 LTS 64 ubuntu machine</span>
 </pre></div>
@@ -315,7 +162,7 @@ And lastly, after that nice explanation, don't use windows command line, use pow
 
 <h3>3. Set up a work folder</h3>
 <p>This will take some time to download, but once complete. The rest of the operations are a matter of seconds.</p>
-<div class="highlight"><pre><span class="c1"># make a new folder called vagrant_test</span>
+<div class="highlight"><pre><span></span><span class="c1"># make a new folder called vagrant_test</span>
 mkdir vagrant_test
 
 <span class="c1"># change directory to vagrant test</span>
@@ -328,7 +175,7 @@ mkdir vagrant_test
 
 <h3>4. Initialize a new Vagrant project</h3>
 <p>Now we have everything we need to start. After running the following commands, a config text file <em>Vagrantfile</em> will be created with a hidden file <em>.vagrant</em></p>
-<div class="highlight"><pre><span class="c1"># initializes this vagrant session with the image we downloaded </span>
+<div class="highlight"><pre><span></span><span class="c1"># initializes this vagrant session with the image we downloaded</span>
 vagrant init ubuntu/trusty64
 
 <span class="c1"># starts the virtual machine</span>
@@ -338,7 +185,7 @@ vagrant up
 
 <p>Once the box is set up, make sure you have git install to access the MINGGW32 bash terminal in windows. From the <em>git bash</em> found when you right-click in an empty space in your <em>vagrant_test</em> folder, type</p>
 <h3>5. Access your brand new Linux machine on Windows!</h3>
-<div class="highlight"><pre><span class="c1"># using ssh to access the shell of your machine</span>
+<div class="highlight"><pre><span></span><span class="c1"># using ssh to access the shell of your machine</span>
 vagrant ssh
 
 <span class="c1"># and when finished exit ssh</span>
@@ -348,8 +195,8 @@ vagrant ssh
 
 <p>and that will enter an ssh shell into the vagrant box. Finally, we have a true linux bash command line or shell!! Horray. The hardest part is over, celebrate and get ready to actually hace some fun</p>
 <h3>6. Using File Sync</h3>
-<p>One of the most confusing and challenging parts of Linux is networking. Vagrant does an awesome job of transferring files to and from your vagrant session, ie, The VM syncs easily with the host machine. To test the sync feature, in your current bash shell, </p>
-<div class="highlight"><pre># create a directory called test
+<p>One of the most confusing and challenging parts of Linux is networking. Vagrant does an awesome job of transferring files to and from your vagrant session, ie, The VM syncs easily with the host machine. To test the sync feature, in your current bash shell,</p>
+<div class="highlight"><pre><span></span># create a directory called test
 mkdir /vagrant/test
 
 # create a file called test.txt and add a string to it
@@ -358,13 +205,13 @@ echo &quot;testing the files sync in a vagrant VM&quot; &gt;&gt; /vagrant/test/t
 
 
 <h3>7. Reloading, Stopping, and Starting</h3>
-<div class="highlight"><pre><span class="c1"># To reload a VM and reload any new changes in the Vagrantfile config run </span>
+<div class="highlight"><pre><span></span><span class="c1"># To reload a VM and reload any new changes in the Vagrantfile config run</span>
 vagrant reload
 
 <span class="c1"># When complete and want to exit, run</span>
 vagrant halt
 
-<span class="c1"># When you are ready to start working again and starting fresh </span>
+<span class="c1"># When you are ready to start working again and starting fresh</span>
 vagrant up
 </pre></div>
 
@@ -372,14 +219,14 @@ vagrant up
 <h3>8. Running scripts and Installing programs</h3>
 <h4>Issues with writing bash scripts in windows</h4>
 <p>As you start editing install scripts and the Vagrantfile, I have found that using windows text editors messes up the character encoding, so use gitbash and vim, like <code>vim install.sh</code> to launch the in shell editor. If you do edit files in windows, you may need to convert them. I have found dos2unix to work well. To install and convert a shell script in place, use</p>
-<div class="highlight"><pre>sudo apt-get install dos2unix
+<div class="highlight"><pre><span></span>sudo apt-get install dos2unix
 dos2unix script.sh
 </pre></div>
 
 
 <h4>Installing python</h4>
-<p>There are many ways to install python, but I really appreciate how well conda works. It has all the packages I want, and they just work. To get conda either install the full package <a href="http://continuum.io/downloads#all">anaconda</a> or, I prefer <a href="http://conda.pydata.org/miniconda.html">miniconda</a> because my internet is slow. Also, I attempted to create a silent install script but was not successful, so if anyone knows how to perform a silent install of miniconda on a vagrant machine, please let me know! </p>
-<div class="highlight"><pre>git clone https://github.com/nagordon/vagrant-miniconda.git
+<p>There are many ways to install python, but I really appreciate how well conda works. It has all the packages I want, and they just work. To get conda either install the full package <a href="http://continuum.io/downloads#all">anaconda</a> or, I prefer <a href="http://conda.pydata.org/miniconda.html">miniconda</a> because my internet is slow. Also, I attempted to create a silent install script but was not successful, so if anyone knows how to perform a silent install of miniconda on a vagrant machine, please let me know!</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/nagordon/vagrant-miniconda.git
 <span class="nb">cd</span> vagrant-miniconda
 vagrant up
 vagrant ssh
@@ -387,7 +234,7 @@ vagrant ssh
 
 
 <p>copy and paste these commands line by line into the vagrant shell to manually install miniconda</p>
-<div class="highlight"><pre><span class="c1"># downloads miniconda</span>
+<div class="highlight"><pre><span></span><span class="c1"># downloads miniconda</span>
 wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh
 
 <span class="c1"># makes the miniconda installation executable</span>
@@ -402,13 +249,13 @@ rm Miniconda-latest-Linux-x86_64.sh
 
 
 <p>now close the ssh connection and restart to access conda</p>
-<div class="highlight"><pre><span class="nb">exit</span>
+<div class="highlight"><pre><span></span><span class="nb">exit</span>
 vagrant ssh
 </pre></div>
 
 
 <p>Run the install script to get all the packages you want</p>
-<div class="highlight"><pre>conda install pip -y
+<div class="highlight"><pre><span></span>conda install pip -y
 conda install numpy -y
 conda install ipython -y
 conda install matplotlib -y
@@ -419,7 +266,7 @@ conda install ipython-notebook -y
 
 
 <h3>9. ENJOY</h3>
-<p>Now that we have everything running smoothly, go out an explore all the amazing software out there on Linux and enjoy. </p>
+<p>Now that we have everything running smoothly, go out an explore all the amazing software out there on Linux and enjoy.</p>
 <h2>Summary</h2>
 <p>In my experience, this is the fastest and easiest way to get from Windows to a real Linux environment. Now, practicing Linux operation from the command line should be easier and fast without having to mess around with the operting system interface. I hope you enjoy your foray into Linux as much as I have. Please let me know if you have any questions, comments, or suggestions. Thanks! Stay Curious!</p>
             </div>
@@ -460,113 +307,85 @@ conda install ipython-notebook -y
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
-
+<!-- Sidebar -->
 <section class="well well-sm">
-    <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
-                <li class="list-group-item"><a href="https://github.com/nagordon"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
-                <li class="list-group-item"><a href="http://www.reddit.com/user/nagordon"><i class="fa fa-reddit-square fa-lg"></i> Reddit</a></li>
-                <li class="list-group-item"><a href="http://www.instructables.com/member/nagordon"><i class="fa fa-instructables-square fa-lg"></i> Instructables</a></li>
-                <li class="list-group-item"><a href="http://stackoverflow.com/users/2438993/nagordon"><i class="fa fa-stackoverflow-square fa-lg"></i> StackOverflow</a></li>
-              </ul>
-            </li>
+  <ul class="list-group list-group-flush">
 
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                <ul class="list-group" id="recentposts">
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/08/20/pythoncode-vs-excel/">
-                            Calculations with Python Code or Excel Spreadsheets
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/08/14/logical-indexing-with-python-excel/">
-                            Logical Indexing with Python and Excel
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/06/05/sage-embed/">
-                            Sage Math Tool
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/05/07/what-open-source-means/">
-                            Understanding and using technology
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/blog/2016/05/06/interactive-integral-deritive/">
-                            Derivative and Integral Interactive Tool
-                        </a>
-                    </li>
-                </ul>
-            </li>
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+    <li class="list-group-item"><a href="https://github.com/nagordon"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="http://stackoverflow.com/users/2438993/nagordon"><i class="fa fa-stackoverflow-square fa-lg"></i> StackOverflow</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
 
-            <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
-                <ul class="list-group" id="categories">
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/aviation.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Aviation
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/computing.html">
-                            <i class="fa fa-folder-open fa-lg"></i> computing
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/engineering.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Engineering
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://ifcuriousthenlearn.com/category/tools.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Tools
-                        </a>
-                    </li>
-                </ul>
-            </li>
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/08/20/pythoncode-vs-excel/">Calculations with Python Code or Excel Spreadsheets</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/08/14/logical-indexing-with-python-excel/">Logical Indexing with Python and Excel</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/06/05/sage-embed/">Sage Math Tool</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/05/07/what-open-source-means/">Understanding and using technology</a></li>
+    <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/blog/2016/05/06/interactive-integral-deritive/">Derivative and Integral Interactive Tool</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
 
-            <li class="list-group-item"><a href="http://ifcuriousthenlearn.com/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group list-inline tagcloud" id="tags">
-                </ul>
-            </li>
-
-
-
-    <li class="list-group-item"><h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
-        <div id="gh_repos">
-            <p class="list-group-item">Status updating...</p>
-        </div>
+<!-- Sidebar/Categories -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4>
+  <ul class="list-group" id="categories">
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/aviation.html"><i class="fa fa-folder-open fa-lg"></i>Aviation</a>
     </li>
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://getpelican.com/" target="_blank">
-                Pelican
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://www.scipy.org/" target="_blank">
-                Scipy.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
-            </a>
-        </li>
-      </ul>
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/computing.html"><i class="fa fa-folder-open fa-lg"></i>computing</a>
     </li>
-    </ul>
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/engineering.html"><i class="fa fa-folder-open fa-lg"></i>Engineering</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://ifcuriousthenlearn.com/category/tools.html"><i class="fa fa-folder-open fa-lg"></i>Tools</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Categories -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://getpelican.com/" target="_blank">Pelican</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://python.org/" target="_blank">Python.org</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.scipy.org/" target="_blank">Scipy.org</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
 </section>
-            </aside>
+<!-- End Sidebar -->            </aside>
         </div>
     </div>
 </div>
@@ -575,7 +394,7 @@ conda install ipython-notebook -y
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Neal Gordon
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
@@ -591,27 +410,28 @@ conda install ipython-notebook -y
 <script src="http://ifcuriousthenlearn.com/theme/js/respond.min.js"></script>
 
     <script src="http://ifcuriousthenlearn.com/theme/js/bodypadding.js"></script>
-    <!-- GitHub JS -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            if (!window.jXHR) {
-                var jxhr = document.createElement('script');
-                jxhr.type = 'text/javascript';
-                jxhr.src = 'http://ifcuriousthenlearn.com/theme/js/jXHR.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(jxhr, s);
-            }
 
-            github.showRepos({
-                user: 'nagordon',
-                count: 5,
-                skip_forks: false,
-                target: '#gh_repos'
-            });
-        });
-    </script>
-    <script src="http://ifcuriousthenlearn.com/theme/js/github.js" type="text/javascript"></script>
-    <!-- End GitHub JS Code -->
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'http://ifcuriousthenlearn.com/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'nagordon',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="http://ifcuriousthenlearn.com/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
     <!-- Disqus -->
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -627,6 +447,24 @@ conda install ipython-notebook -y
         }());
     </script>
     <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-65272251-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
 
 </body>
 </html>
