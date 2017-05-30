@@ -1077,6 +1077,9 @@ $$
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Easy enough, but what if you want to make a payment table, it would be very tedious by hand. Fortuantley, we have a computer. Since I understand the equation being used, I have no issues with automating this a little more. We can make an spreadsheet table. which is nice visually, didn't take very much time, and allows me to change some parameters.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt; - I found out that Excel has a great Loan Amortization spreadsheet built in, and it even includes early payoff, which is not that easy to calculate. I have included it in the spreadsheet below or you can make a new one by doing the following.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;right-click on a new sheet -&gt; Insert -&gt; Spreadsheet Solutions -&gt; Loan Amortization&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id="Spreadsheet"&gt;Spreadsheet&lt;a class="anchor-link" href="#Spreadsheet"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
